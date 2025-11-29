@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#1e40af",
+            },
+            rotate: {
+              360: "360deg",
+            },
+            transitionDuration: {
+              2000: "2000ms", // 2 seconds
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @layer utilities {
+        .text-shadow {
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+        }
+        .text-shadow-md {
+          text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.45);
+        }
+        .text-shadow-lg {
+          text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+        }
+      }
+    </style>
+  </head>
+  <body class="light">
+    <div
+      class="w-full text-center bg-gray-900 text-white py-1 text-sm dark:bg-gray-100 dark:text-black"
+    >
+      Free Shipping on orders over Rs 50000
+    </div>
+    <!-- this is the navbar -->
+    <header class="w-full bg-white shadow z-50 sticky top-0">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between">
+          <div>
+            <h2 class="text-xl text-primary font-semibold">
+              <a href="#"> <i class="fas fa-tshirt"></i> BastraVerse</a>
+            </h2>
+          </div>
+          <nav>
+            <ul
+              class="hidden md:flex gap-5 text-lg font-medium text-gray-700 dark:text-black"
+            >
+              <li
+                class="hover:text-primary dark:text-gray-900 dark:hover:text-primary"
+              >
+                <a href="#">Home</a>
+              </li>
+              <li
+                class="hover:text-primary dark:text-gray-900 dark:hover:text-primary"
+              >
+                <a href="#">About</a>
+              </li>
+              <li
+                class="hover:text-primary dark:text-gray-900 dark:hover:text-primary"
+              >
+                <a href="#">products</a>
+              </li>
+              <li
+                class="hover:text-primary dark:text-gray-900 dark:hover:text-primary"
+              >
+                <a href="#">Services</a>
+              </li>
+              <li
+                class="hover:text-primary dark:text-gray-900 dark:hover:text-primary"
+              >
+                <a href="#">Blogs</a>
+              </li>
+              <li
+                class="hover:text-primary dark:text-gray-900 dark:hover:text-primary"
+              >
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="text-gray-700">
+            <button
+              class="hover:text-primary dark:text-gray-900 dark:hover:text-primary text-xl"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+            <button
+              class="hover:text-primary dark:text-gray-900 dark:hover:text-primary text-xl"
+            >
+              <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button
+              class="hover:text-primary dark:text-gray-900 dark:hover:text-primary text-xl"
+            >
+              <i class="fas fa-user"></i>
+            </button>
+            <button
+              class="md:hidden hover:text-primary dark:text-gray-900 dark:hover:text-primary text-xl"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Hero section  -->
+      <section
+        class="py-24 bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900"
+      >
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col md:flex-row items-center gap-5 dark:text-gray-200"
+          >
+            <div class="md:w-1/2 md:mb-0">
+              <h2
+                class="text-4xl md:text 5xl font-bold text-gray-800 mb-5 dark:text-white"
+              >
+                Elevate Your Style with
+                <span class="text-primary">BastraVerse</span>
+              </h2>
+              <p
+                class="text-justify tracking-tight text-lg text-gray-600 mb-5 dark:text-gray-200"
+              >
+                Discover BastraVerse, where fashion meets comfort and
+                innovation. Our clothing collection features premium fabrics,
+                modern designs, and perfect fits crafted to enhance your
+                everyday look. Step out in confidence with styles that reflect
+                your unique personality.
+              </p>
+              <div class="flex gap-5">
+                <button
+                  class="border border-primary text-white rounded-lg items-center px-6 py-2 bg-primary dark:text-white font-medium hover:bg-secondary transition duration-300"
+                >
+                  Shop Now
+                </button>
+                <button
+                  class="border border-primary text-primary rounded-lg items-center px-6 py-2 dark:text-white font-medium hover:bg-primary hover:text-white dark:text-white transition duration-300"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+              <img
+                src="assets/images/jacket.jpg"
+                alt=""
+                class="border rounded-lg shadow-lg p-4 bg-white"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- this is the card section  -->
+      <section class="dark:bg-gray-800 py-12">
+        <div>
+          <h2
+            class="font-bold text-4xl text-gray-800 flex justify-center dark:text-gray-200 mb-12"
+          >
+            Why Shop With Us
+          </h2>
+          <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div
+                class="border rounded-2xl hover:border-primary justify-center items-center flex flex-col p-2 bg-gray-100 shadow-lg"
+              >
+                <div class="border rounded-full p-4 bg-primary/20 mt-6">
+                  <span
+                    class="fas fa-shipping-fast text-4xl text-primary transition-transform duration-500 hover:translate-x-2"
+                  ></span>
+                </div>
+                <h2 class="font-medium text-gray-600 text-2xl mt-6">
+                  Free Shipping
+                </h2>
+                <p class="text-sm text-justify my-6 px-4 text-gray-700">
+                  Enjoy free shipping on all orders, with no extra fees or
+                  minimum purchase required. Get your favorite products
+                  delivered straight to your door quickly and conveniently. Take
+                  advantage of this limited-time offer to save more on your
+                  shopping today.
+                </p>
+              </div>
+              <div
+                class="border rounded-2xl hover:border-green-500 justify-center items-center flex flex-col p-2 bg-gray-100 shadow-lg"
+              >
+                <div class="border rounded-full p-4 bg-green-500/20 mt-6">
+                  <span
+                    class="fas fa-credit-card text-4xl text-green-500 transition-transform duration-500 hover:scale-110"
+                  ></span>
+                </div>
+                <h2 class="font-medium text-gray-600 text-2xl mt-6">
+                  Secure Payment
+                </h2>
+                <p class="text-sm text-justify my-6 px-4 text-gray-700">
+                  Experience peace of mind with our secure payment system. We
+                  use advanced encryption and trusted payment gateways to
+                  protect your sensitive information. Your transactions are
+                  safe, private, and processed quickly, so you can shop
+                  confidently every time.
+                </p>
+              </div>
+              <div
+                class="border rounded-2xl hover:border-orange-500 justify-center items-center flex flex-col p-2 bg-gray-100 shadow-lg"
+              >
+                <div class="border rounded-full p-4 bg-orange-500/20 mt-6">
+                  <span
+                    class="fas fa-headset text-4xl text-orange-500 transition-transform duration-500 hover:scale-110"
+                  ></span>
+                </div>
+                <h2 class="font-medium text-gray-600 text-2xl mt-6">
+                  24/7 Support
+                </h2>
+                <p class="text-sm text-justify my-6 px-4 text-gray-700">
+                  Enjoy free shipping on all orders, with no extra fees or
+                  minimum purchase required. Get your favorite products
+                  delivered straight to your door quickly and conveniently. Take
+                  advantage of this limited-time offer to save more on your
+                  shopping today.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- This is the product section  -->
+      <section class="w-full bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 py-12">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between">
+            <h2 class="text-3xl font-medium text-gray-800 dark:text-white">Popular Products</h2>
+            <button
+              class="text-xl font-medium text-primary transition-transform duration-300 hover:scale-125"
+            >
+              View All
+            </button>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
+          >
+            <!-- Image and sell tag  -->
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/image.png"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <!-- ends here  -->
+              <!-- description and the reaction  -->
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Men jacket
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(9.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$85</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $99
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <!-- Ends here -->
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/Net lenga.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Net Lenga
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(229)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$58</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $63
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/winter.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Winter Combo
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(29.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$20</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $33
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/v-shape neck.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Men V-Neck
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star-half text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(22.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$45</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $59
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- dommy data  -->
+
+                        <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/image.png"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <!-- ends here  -->
+              <!-- description and the reaction  -->
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Men jacket
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(9.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$85</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $99
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <!-- Ends here -->
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/Net lenga.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Net Lenga
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(229)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$58</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $63
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/winter.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Winter Combo
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(29.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$20</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $33
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/v-shape neck.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Men V-Neck
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star-half text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(22.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$45</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $59
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- next dommy data  -->
+
+
+                        <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/image.png"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <!-- ends here  -->
+              <!-- description and the reaction  -->
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Men jacket
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(9.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$85</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $99
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <!-- Ends here -->
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/Net lenga.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Net Lenga
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(229)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$58</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $63
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/winter.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Winter Combo
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(29.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$20</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $33
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/v-shape neck.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Men V-Neck
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star-half text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(22.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$45</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $59
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- part 3  -->
+                         <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/image.png"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <!-- ends here  -->
+              <!-- description and the reaction  -->
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Men jacket
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(9.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$85</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $99
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <!-- Ends here -->
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/Net lenga.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Net Lenga
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(229)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$58</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $63
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/winter.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Winter Combo
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(29.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$20</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $33
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="shadow-sm border rounded-lg my-8 flex flex-col bg-white overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div class="relative">
+                <img
+                  src="assets/images/v-shape neck.jpg"
+                  alt=""
+                  class="w-full object-cover h-48"
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-600 rounded-full p-1 text-white"
+                  >Sale</span
+                >
+              </div>
+              <div class="py-2">
+                <h2 class="text-3xl px-4 font-medium text-gray-700">
+                  Men V-Neck
+                </h2>
+              </div>
+              <div class="flex gap-2 px-4 items-center">
+                <div class="flex">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star-half text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-gray-300 text-sm font-medium">(22.5K+)</span>
+              </div>
+              <div class="py-2 flex justify-between px-4">
+                <div class="flex gap-4">
+                  <h2 class="text-xl font-medium text-gray-800">$45</h2>
+                  <h2 class="text-lg font-medium text-gray-400 line-through">
+                    $59
+                  </h2>
+                </div>
+                <div
+                  class="flex rounded-full w-8 h-8 bg-primary hover:bg-secondary shadow-lg mb-4 justify-center"
+                >
+                  <button class="fas fa-shopping-cart text-white"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- promotional product  -->
+      <section class="py-12 dark:bg-gray-600">
+        <div
+          class="py-12 rounded-xl container mx-auto px-4 bg-gradient-to-r from-red-100 to-indigo-100 dark:from-gray-800 dark:to-gray-900"
+        >
+          <div
+            class="flex flex-col md:flex-row items-center gap-5 dark:text-gray-200"
+          >
+            <div class="md:w-1/2 md:mb-0">
+              <h2
+                class="bg-gray-200 border font-bold rounded-2xl px-4 py-2 w-max mb-2 text-blue-800"
+              >
+                Featured Product
+              </h2>
+              <h2
+                class="text-4xl md:text 5xl font-bold text-gray-800 mb-5 dark:text-white"
+              >
+                Candian Goose
+              </h2>
+              <p
+                class="text-justify tracking-tight text-lg text-gray-600 mb-5 dark:text-gray-200"
+              >
+                Canada Goose jackets are renowned for their exceptional warmth
+                and durability, designed to withstand extreme cold weather. Made
+                with the signature Arctic Tech fabric, these jackets are
+                durable, wind-resistant, and treated with a water-repellent
+                finish to handle snow and light rain.
+              </p>
+              <div class="flex mb-5 items-center">
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <span class="text-gray-400 px-4 font-medium text-sm dark:text-white">
+                  5/5 from 1M+ reviews</span
+                >
+              </div>
+              <div class="flex mb-5 gap-4 items-center">
+                <h2 class="text-2xl text-gray-700 font-medium dark:text-white">$355</h2>
+                <h2 class="text-xl line-through text-gray-400 dark:text-white">$443.75</h2>
+                <h2 class="rounded-lg bg-red-500 text-white font-semibold p-1">
+                  20% Off
+                </h2>
+              </div>
+              <div class="flex gap-5">
+                <button
+                  class="border bg-white text-primary rounded-lg items-center px-6 py-2 bg-primary  font-medium hover:bg-secondary hover:text-white transition duration-300"
+                >
+                  Shop Now <i class="fa fa-shopping-cart px-2 hover:text-white"></i>
+                </button>
+                <button
+                  class="border border-primary text-primary rounded-lg items-center px-6 py-2 dark:text-white font-medium hover:bg-primary hover:text-white dark:text-white transition duration-300"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+              <img
+                src="assets/images/canida.jpg"
+                alt=""
+                class="border rounded-lg shadow-lg bg-white h-96 transition-transform duration-300 hover:scale-110"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- This is the feedback section  -->
+      <section class="bg-gray-100  bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 py-12 ">
+        <div class="container mx-auto py-6">
+          <div class="flex justify-center m-12">
+            <p class="text-4xl font-bold text-gray-800 dark:text-white">
+              What Customers Says About Us
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="flex flex-col border bg-gradient-to-r from-orange-100 to-blue-200 p-5 border-white rounded-2xl shadow-md hover:border-blue-800"
+            >
+              <div class="flex items-center">
+                <div>
+                  <img
+                    class="border rounded-full bg-gray-100 h-12"
+                    src="assets/images/Img1 (59).jfif"
+                    alt=""
+                  />
+                </div>
+                <div class="px-2">
+                  <p class="text-2xl text-gray-700 font-semibold">Lord Ram</p>
+                  <div class="tracking-tighter text-sm">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="py-4 text-justify">
+                In BastraVerse, I see dedication, quality, and purity of
+                intention. The clothes reflect dignity, steadiness and
+                discipline—values that uplift both the wearer and the maker. May
+                everyone who purchases from BastraVerse walk the path of
+                confidence and goodness.
+              </p>
+            </div>
+            <div
+              class="flex flex-col border bg-gradient-to-r from-red-100 to-green-200 p-5 border-white rounded-2xl shadow-md hover:border-green-800"
+            >
+              <div class="flex items-center">
+                <div>
+                  <img
+                    class="border rounded-full bg-gray-100 h-12"
+                    src="assets/images/Img1 (61).jfif"
+                    alt=""
+                  />
+                </div>
+                <div class="px-2">
+                  <p class="text-2xl text-gray-700 font-semibold">Laxmi Mata</p>
+                  <div class="tracking-tighter text-sm">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="py-4 text-justify">
+                Where beauty is paired with honesty, prosperity naturally
+                follows. BastraVerse offers garments that shine with elegance
+                and bring a sense of abundance. May these clothes bring comfort
+                to the body and positivity to the home.
+              </p>
+            </div>
+            <div
+              class="flex flex-col border bg-gradient-to-r from-indigo-100 to-pink-100 p-5 border-white rounded-2xl shadow-md transition-transform duration-2000 hover:rotate-360 hover:border-orange-900"
+            >
+              <div class="flex items-center">
+                <div>
+                  <img
+                    class="border rounded-full bg-gray-100 h-12"
+                    src="assets/images/Img1 (9).jfif"
+                    alt=""
+                  />
+                </div>
+                <div class="px-2 overflow-hidden">
+                  <p
+                    class="text-2xl text-gray-700 font-semibold overflow-hidden"
+                  >
+                    Shri krishna
+                  </p>
+                  <div class="tracking-tighter text-sm">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="py-4 text-justify">
+                BastraVerse brings together beauty and simplicity, just as a
+                lotus blooms in both sun and shade. The fabrics are soft,
+                vibrant, and filled with the joy of color—much like the hues of
+                Vrindavan. May every customer feel comfort, grace, and happiness
+                wearing these garments.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- This is the subscription section -->
+      </section>
+      <section class="py-12 bg-primary dark:bg-secondary">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col justify-center items-center">
+            <h2 class="text-white text-4xl font-bold m-4">
+              Stay updated with Fashion Trends
+            </h2>
+            <p class="text-white">
+              Staying updated with the latest fashion trends helps you express
+              yourself with confidence and style. Whether it's fresh seasonal
+              collections, modern ethnic wear, or trending streetwear, the world
+              of fashion keeps evolving every day. Exploring new outfits and
+              styles allows you to upgrade your wardrobe and find looks that
+              match your personality. With the right guidance and inspiration,
+              staying stylish becomes effortless and exciting.
+            </p>
+            <div class="flex m-6">
+              <input
+                class="rounded-l-lg w-96 p-2 focus:border-none focus:outline-none flex-grow"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="your email address"
+              />
+              <button
+                class="bg-primary text-white w-36 p-4 font-semibold rounded-r-lg m-0 bg-secondary hover:bg-black"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Get in touch section -->
+      <section class="py-12  bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 py-12 ">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold mb-6 text-gray-800 flex justify-center dark:text-white">
+            Get in Touch
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 class="text-xl font-medium text-gray-800 dark:text-white">
+                Contact Information
+              </h2>
+              <div class="flex items-start mt-6">
+                <div class="bg-primary bg-opacity-10 px-3 py-2.5 rounded-full">
+                  <i class="fa fa-map-marker-alt text-primary"></i>
+                </div>
+                <div class="flex mx-4 flex-col">
+                  <h2 class="font-semibold text-gray-800 dark:text-white">Our Location</h2>
+                  <p class="text-gray-800 dark:text-white">Kamalbinyak, Bhaktapur</p>
+                </div>
+              </div>
+
+              <div class="flex items-start mt-6">
+                <div class="bg-primary bg-opacity-10 px-3 py-2.5 rounded-full">
+                  <i class="fa fa-phone text-primary"></i>
+                </div>
+                <div class="flex mx-4 flex-col">
+                  <h2 class="font-semibold text-gray-800 dark:text-white">Phone</h2>
+                  <p class="text-gray-800 dark:text-white">9860678022, 01225486</p>
+                </div>
+              </div>
+
+              <div class="flex items-start mt-6">
+                <div class="bg-primary bg-opacity-10 px-3 py-2.5 rounded-full">
+                  <i class="fa fa-envelope text-primary"></i>
+                </div>
+                <div class="flex mx-4 flex-col">
+                  <h2 class="font-semibold text-gray-800 dark:text-white">Email</h2>
+                  <p class="text-gray-800 dark:text-white">info@bastraverse.com.np</p>
+                </div>
+              </div>
+
+              <div class="flex items-start mt-6">
+                <div class="bg-primary bg-opacity-10 px-3 py-2.5 rounded-full">
+                  <i class="fa fa-clock text-primary"></i>
+                </div>
+                <div class="flex mx-4 flex-col">
+                  <h2 class="font-semibold text-gray-800 dark:text-white">Working Hours</h2>
+                  <p class="text-sm text-gray-800 dark:text-white">24/7</p>
+                </div>
+              </div>
+            </div>
+            <!-- this is the form section start -->
+            <div>
+              <h2 class="text-xl font-medium text-gray-800 dark:text-white">Send us Message</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="mt-4">
+                  <label
+                    for="name"
+                    class="block text-sm text-gray-600 font-medium dark:text-white"
+                    >Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Username"
+                    class="w-full border border-blue-200 mt-1 py-2 px-4 rounded-lg focus:border-primary/80 focus: outline-none focus:border-4"
+                  />
+                </div>
+                <div class="mt-4">
+                  <label
+                    for="email"
+                    class="block text-sm text-gray-600 font-medium dark:text-white"
+                    >Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="email@gmail.com"
+                    class="w-full border border-blue-200 mt-1 py-2 px-4 rounded-lg focus:border-primary/80 focus:outline-none focus:border-4"
+                  />
+                </div>
+              </div>
+              <!-- form grid ends here -->
+              <div class="mt-4">
+                <label
+                  for="name"
+                  class="block text-sm text-gray-600 font-medium dark:text-white"
+                  >Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="subject"
+                  class="w-full border border-blue-200 mt-1 py-2 px-4 rounded-lg focus:border-primary/80 focus:outline-none focus:border-4"
+                />
+              </div>
+              <div class="mt-4">
+                <label
+                  for="name"
+                  class="block text-sm text-gray-600 font-medium dark:text-white"
+                  >Message
+                </label>
+                <textarea
+                  type="textarea"
+                  id="message"
+                  placeholder="how can we help you?"
+                  rows="5"
+                  class="w-full border border-blue-200 mt-1 py-2 px-4 rounded-lg focus:border-primary/80 focus:outline-none focus:border-4"
+                >
+                </textarea>
+              </div>
+              <div class="mt-4">
+                <button
+                  type="button"
+                  id="message"
+                  placeholder="button"
+                  class="text-lg w-full border border-blue-200 mt-1 py-2 px-4 rounded-lg focus:border-primary/80 focus:outline-none focus:border-4 bg-primary text-white hover:bg-secondary dark:text-white"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-800 min-h-screen">
+      <div class="container mx-auto py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <!-- This is the logo and description and social media logo  -->
+          <div class="flex flex-col py-3">
+            <h1 class="font-semibold text-xl text-white mt-2">
+              <i class="fas fa-tshirt"></i> BastraVerse
+            </h1>
+            <p class="text-justify text-gray-300 hover:text-white mt-4">
+              Bastraverse can thrive by building a strong online presence with
+              transparent details, real reviews, and trust-focused customer
+              service.
+            </p>
+            <div class="mt-4 flex gap-4">
+              <i
+                class="fab fa-facebook-f text-gray-300 hover:text-white text-xl"
+              ></i>
+              <i
+                class="fab fa-instagram text-gray-300 hover:text-white text-xl"
+              ></i>
+              <i
+                class="fab fa-linkedin-in text-gray-300 hover:text-white text-xl"
+              ></i>
+              <i
+                class="fab fa-twitter text-gray-300 hover:text-white text-xl"
+              ></i>
+            </div>
+          </div>
+          <!-- Quick links   -->
+          <div>
+            <h1 class="font-semibold text-xl text-white mt-2">Quick Links</h1>
+            <div class="flex flex-col mt-4">
+              <ul class="text-white">
+                <li class="">
+                  <a href="#" class="text-gray-300 hover:text-white">Home</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white">About</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Products</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white">Blogs</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Customer Service  -->
+          <div>
+            <h1 class="font-semibold text-xl text-white mt-2">
+              Customer Service
+            </h1>
+            <div class="flex flex-col mt-4">
+              <ul class="text-white">
+                <li class="">
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white">FAQs</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Support Center</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- payment info  -->
+          <div>
+            <h1 class="font-semibold text-xl text-white mt-2">
+              We Accept
+            </h1>
+            <div class="flex mt-6 gap-2">
+              <div class="bg-white px-2 py-1 rounded">
+                <i class="fab fa-cc-visa text-blue-800 text-2xl"></i>
+              </div>
+
+              <div class="bg-white px-2 py-1 rounded">
+                <i class="fab fa-cc-mastercard text-orange-600 text-2xl"></i>
+              </div>
+
+              <div class="bg-white px-2 py-1 rounded">
+                <i class="fab fa-cc-apple-pay text-black-800 text-2xl"></i>
+              </div>
+              
+              <div class="bg-white px-2 py-1 rounded">
+                <i class="fab fa-cc-paypal text-secondary text-2xl"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+                  <!-- horizontal line  -->
+           <div class="px-8">
+<hr class="w-full">
+           </div>
+
+           <div class="flex items-center justify-center mt-8">
+            <p class="text-gray-100" > &copy; All right reserved to BastraVerse. </p>
+           </div>
+      </div>
+    </footer>
+  </body>
+</html>
