@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact-Us </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#3b82f6",
+            secondary: "#1e40af",
+          },
+        },
+      },
+    };
+  </script>
+
+</head>
+
+<body>
+  <section class="w-full bg-white">
+    <div class="container mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 ">Get In Touch</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-6">Contact Info</h3>
+          <div class="space-y-4">
+            <div class="flex flex-start">
+              <div class="bg-primary bg-opacity-10 px-3 py-2.5  rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800">Our Location</h4>
+                <p class="text-gray-600">Gaushal Marg, Biratnagar-10</p>
+              </div>
+            </div>
+            <div class="flex flex-start">
+              <div class="bg-primary bg-opacity-10 px-3 py-2.5  rounded-full mr-4">
+                <i class="fa-solid fa-phone text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800">Phone number</h4>
+                <p class="text-gray-600">9702294378, 025-454610</p>
+              </div>
+            </div>
+            <div class="flex flex-start">
+              <div class="bg-primary bg-opacity-10 px-3 py-2.5  rounded-full mr-4">
+                <i class="fa-solid fa-envelope text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800">Email address</h4>
+                <p class="text-gray-600">bastra.official@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex flex-start">
+              <div class="bg-primary bg-opacity-10 px-3 py-2.5  rounded-full mr-4">
+                <i class="fa-solid fa-clock text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800">Working hours</h4>
+                <p class="text-gray-600">Sun-Fri 9:00 AM - 6:00PM </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
+          <form action="/action" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="mb-1 text-gray-700 text-sm font-medium">Name</label>
+                <input type="text" id="name"
+                  class="w-full border border-gray-600 px-4 py-2 rounded-lg focus:outline-primary">
+              </div>
+              <div>
+                <label for="email" class="mb-1 text-gray-700 text-sm font-medium">Email</label>
+                <input type="email" id="email"
+                  class="w-full border border-gray-600 px-4 py-2 rounded-lg focus:outline-primary">
+              </div>
+            </div>
+            <div>
+              <label for="sub" class="mb-1 text-gray-700 text-sm font-medium">Subject</label>
+              <input type="text" id="sub"
+                class="w-full border border-gray-600 px-4 py-2 rounded-lg focus:outline-primary">
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea class="w-full border border-gray-600 px-4 py-2 rounded-lg focus:outline-primary"></textarea>
+            </div>
+
+            <button type="submit" class="bg-primary hover:bg-secondary px-6 py-4 rounded-lg font-medium text-white">Send
+              message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
