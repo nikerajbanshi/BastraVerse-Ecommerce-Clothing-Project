@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BastraVerse - Collection</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#1e40af",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom Utilities -->
+    <style>
+      @layer utilities {
+        .text-shadow {
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="light bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500"
+  >
+    <!-- NAVBAR -->
+    <header
+      class="w-full bg-white dark:bg-gray-800 shadow sticky top-0 z-50 transition-colors duration-500"
+    >
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center"
+      >
+        <h1 class="text-xl font-semibold text-primary flex items-center gap-2">
+          <i class="fas fa-tshirt"></i> BastraVerse
+        </h1>
+        <nav>
+          <ul class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300">
+            <li><a href="#" class="hover:text-primary">Home</a></li>
+            <li><a href="#" class="hover:text-primary">About</a></li>
+            <li>
+              <a href="product.html" class="hover:text-primary">Products</a>
+            </li>
+            <li><a href="#" class="hover:text-primary">Services</a></li>
+            <li><a href="#" class="hover:text-primary">Blogs</a></li>
+            <li><a href="#" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-4 text-gray-700 dark:text-gray-300 text-xl">
+          <i class="fas fa-shopping-cart cursor-pointer hover:text-primary"></i>
+          <i class="fas fa-user cursor-pointer hover:text-primary"></i>
+          <i
+            class="fas fa-bars cursor-pointer md:hidden hover:text-primary"
+          ></i>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pb-12 da">
+      <!-- PAGE-TITLE -->
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12 uppercase tracking-wide text-gray-900 dark:text-white"
+      >
+        OUR COLLECTION
+      </h2>
+
+      <!-- SEARCH + CATEGORIES -->
+      <section
+        class="flex flex-col md:flex-row md:items-center justify-between mb-10 space-y-4 md:space-y-0 md:space-x-4"
+      >
+        <!-- Search -->
+        <form
+          role="search"
+          class="flex-grow flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-3 shadow-sm"
+        >
+          <label for="product-search" class="sr-only">Search Products</label>
+          <svg
+            class="w-6 h-6 text-gray-500 dark:text-gray-300 mr-3"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+          <input
+            type="search"
+            id="product-search"
+            placeholder="Search"
+            class="flex-grow bg-transparent outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400 text-lg"
+          />
+        </form>
+
+        <!-- Categories -->
+        <nav
+          aria-label="Product Categories"
+          class="flex items-center overflow-x-auto space-x-2 md:space-x-4 pb-2"
+        >
+          <ul class="flex space-x-2 md:space-x-4">
+            <li>
+              <button
+                class="px-5 py-2 text-sm font-medium rounded-full bg-black text-white"
+              >
+                ALL
+              </button>
+            </li>
+            <li>
+              <button
+                class="px-5 py-2 text-sm font-medium rounded-full bg-gray-100 dark:bg-gray-700 dark:text-white hover:bg-gray-200"
+              >
+                SHIRTS
+              </button>
+            </li>
+            <li>
+              <button
+                class="px-5 py-2 text-sm font-medium rounded-full bg-gray-100 dark:bg-gray-700 dark:text-white hover:bg-gray-200"
+              >
+                JEANS
+              </button>
+            </li>
+            <li>
+              <button
+                class="px-5 py-2 text-sm font-medium rounded-full bg-gray-100 dark:bg-gray-700 dark:text-white hover:bg-gray-200"
+              >
+                JACKETS
+              </button>
+            </li>
+            <li>
+              <button
+                class="px-5 py-2 text-sm font-medium rounded-full bg-gray-100 dark:bg-gray-700 dark:text-white hover:bg-gray-200"
+              >
+                SHOES
+              </button>
+            </li>
+            <li>
+              <button
+                class="px-5 py-2 text-sm font-medium rounded-full bg-gray-100 dark:bg-gray-700 dark:text-white hover:bg-gray-200"
+              >
+                ACCESSORIES
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <ul
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
+      >
+        <li class="group block">
+          <article>
+            <a href="#">
+              <div
+                class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
+              >
+                <img
+                  src="/BastraVerse-Ecommerce-Clothing-Project/images/t-shirt.jpg"
+                  alt="Cotton T-Shirt"
+                  class="w-full h-full object-cover group-hover:opacity-75 transition"
+                />
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3
+                    class="text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Cotton T-Shirt
+                  </h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    Regular Fit
+                  </p>
+                </div>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">
+                  ₹1,658
+                </p>
+              </div>
+            </a>
+          </article>
+        </li>
+
+        <li class="group block">
+          <article>
+            <a href="#">
+              <div
+                class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
+              >
+                <img
+                  src="/BastraVerse-Ecommerce-Clothing-Project/images/oversize.jpg"
+                  alt="Oversized T-Shirt"
+                  class="w-full h-full object-cover group-hover:opacity-75 transition"
+                />
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3
+                    class="text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Oversized T-Shirt
+                  </h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    Heavy Weight
+                  </p>
+                </div>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">
+                  ₹1,323
+                </p>
+              </div>
+            </a>
+          </article>
+        </li>
+
+        <li class="group block">
+          <article>
+            <a href="#">
+              <div
+                class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
+              >
+                <img
+                  src="/BastraVerse-Ecommerce-Clothing-Project/images/zipper-t-shirt.jpg"
+                  alt="Cotton Shirt"
+                  class="w-full h-full object-cover group-hover:opacity-75 transition"
+                />
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3
+                    class="text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Cotton Shirt
+                  </h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    Full Sleeve Zipper
+                  </p>
+                </div>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">
+                  ₹2,318.67
+                </p>
+              </div>
+            </a>
+          </article>
+        </li>
+
+        <li class="group block">
+          <article>
+            <a href="#">
+              <div
+                class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
+              >
+                <img
+                  src="/BastraVerse-Ecommerce-Clothing-Project/images/cargo.jpg"
+                  alt="Cargo Pants"
+                  class="w-full h-full object-cover group-hover:opacity-75 transition"
+                />
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3
+                    class="text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Cargo Pants
+                  </h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    Utility Fit
+                  </p>
+                </div>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">
+                  ₹3,318
+                </p>
+              </div>
+            </a>
+          </article>
+        </li>
+
+        <li class="group block">
+          <article>
+            <a href="#">
+              <div
+                class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
+              >
+                <img
+                  src="/BastraVerse-Ecommerce-Clothing-Project/images/denim-jecket.jpg"
+                  alt="Denim Jacket"
+                  class="w-full h-full object-cover group-hover:opacity-75 transition"
+                />
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3
+                    class="text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Denim Jacket
+                  </h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    Washed Blue
+                  </p>
+                </div>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">
+                  ₹3,658
+                </p>
+              </div>
+            </a>
+          </article>
+        </li>
+
+        <li class="group block">
+          <article>
+            <a href="#">
+              <div
+                class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
+              >
+                <img
+                  src="/BastraVerse-Ecommerce-Clothing-Project/images/sneaker.jpg"
+                  alt="Sneakers"
+                  class="w-full h-full object-cover group-hover:opacity-75 transition"
+                />
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3
+                    class="text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Sneakers
+                  </h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    Comfort Fit
+                  </p>
+                </div>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">
+                  ₹6,058
+                </p>
+              </div>
+            </a>
+          </article>
+        </li>
+      </ul>
+
+      <!-- PAGINATION -->
+      <nav class="flex justify-center mt-16">
+        <div
+          class="flex items-center space-x-2 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg"
+        >
+          <a
+            href="#"
+            class="px-4 py-2 text-sm font-medium text-gray-500 dark:text-gray-300 hover:text-primary"
+            >‹</a
+          >
+          <a href="#" class="px-4 py-2 bg-primary text-white rounded-full">1</a>
+          <a
+            href="#"
+            class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full"
+            >2</a
+          >
+          <a
+            href="#"
+            class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full"
+            >3</a
+          >
+          <span class="text-gray-400">...</span>
+          <a
+            href="#"
+            class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full"
+            >10</a
+          >
+          <a
+            href="#"
+            class="px-4 py-2 text-sm font-medium text-gray-500 dark:text-gray-300 hover:text-primary"
+            >›</a
+          >
+        </div>
+      </nav>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 min-h-screen">
+      <div class="container mx-auto py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <!-- This is the logo and description and social media logo  -->
+          <div class="flex flex-col py-3">
+            <h1 class="font-semibold text-xl text-white mt-2">
+              <i class="fas fa-tshirt"></i> BastraVerse
+            </h1>
+            <p class="text-justify text-gray-300 hover:text-white mt-4">
+              Bastraverse can thrive by building a strong online presence with
+              transparent details, real reviews, and trust-focused customer
+              service.
+            </p>
+            <div class="mt-4 flex gap-4">
+              <i
+                class="fab fa-facebook-f text-gray-300 hover:text-white text-xl"
+              ></i>
+              <i
+                class="fab fa-instagram text-gray-300 hover:text-white text-xl"
+              ></i>
+              <i
+                class="fab fa-linkedin-in text-gray-300 hover:text-white text-xl"
+              ></i>
+              <i
+                class="fab fa-twitter text-gray-300 hover:text-white text-xl"
+              ></i>
+            </div>
+          </div>
+          <!-- links   -->
+          <div>
+            <h1 class="font-semibold text-xl text-white mt-2">Quick Links</h1>
+            <div class="flex flex-col mt-4">
+              <ul class="text-white">
+                <li class="">
+                  <a href="#" class="text-gray-300 hover:text-white">Home</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white">About</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Products</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white">Blogs</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Customer Service  -->
+          <div>
+            <h1 class="font-semibold text-xl text-white mt-2">
+              Customer Service
+            </h1>
+            <div class="flex flex-col mt-4">
+              <ul class="text-white">
+                <li class="">
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white">FAQs</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Support Center</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- payment info  -->
+          <div>
+            <h1 class="font-semibold text-xl text-white mt-2">We Accept</h1>
+            <div class="flex mt-6 gap-2">
+              <div class="bg-white px-2 py-1 rounded">
+                <i class="fab fa-cc-visa text-blue-800 text-2xl"></i>
+              </div>
+
+              <div class="bg-white px-2 py-1 rounded">
+                <i class="fab fa-cc-mastercard text-orange-600 text-2xl"></i>
+              </div>
+
+              <div class="bg-white px-2 py-1 rounded">
+                <i class="fab fa-cc-apple-pay text-black-800 text-2xl"></i>
+              </div>
+
+              <div class="bg-white px-2 py-1 rounded">
+                <i class="fab fa-cc-paypal text-secondary text-2xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-8">
+          <hr class="w-full" />
+        </div>
+
+        <div class="flex items-center justify-center mt-8">
+          <p class="text-gray-100">&copy; All right reserved to BastraVerse.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
