@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,43 +38,52 @@
       }
     </style>
   </head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-  <body
-    class="light bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500"
-  >
     <!-- NAVBAR -->
-    <header
-      class="w-full bg-white dark:bg-gray-800 shadow sticky top-0 z-50 transition-colors duration-500"
-    >
-      <div
-        class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center"
-      >
-        <h1 class="text-xl font-semibold text-primary flex items-center gap-2">
-          <i class="fas fa-tshirt"></i> BastraVerse
-        </h1>
-        <nav>
-          <ul class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300">
-            <li><a href="#" class="hover:text-primary">Home</a></li>
-            <li><a href="#" class="hover:text-primary">About</a></li>
-            <li>
-              <a href="product.html" class="hover:text-primary">Products</a>
-            </li>
-            <li><a href="#" class="hover:text-primary">Services</a></li>
-            <li><a href="#" class="hover:text-primary">Blogs</a></li>
-            <li><a href="#" class="hover:text-primary">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="flex gap-4 text-gray-700 dark:text-gray-300 text-xl">
-          <i class="fas fa-shopping-cart cursor-pointer hover:text-primary"></i>
-          <i class="fas fa-user cursor-pointer hover:text-primary"></i>
-          <i
-            class="fas fa-bars cursor-pointer md:hidden hover:text-primary"
-          ></i>
-        </div>
-      </div>
-    </header>
+  <header
+  class="w-full bg-white dark:bg-gray-800 shadow sticky top-0 z-50 transition-colors duration-500"
+>
+  <div
+    class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center"
+  >
+    <!-- Logo -->
+    <h1 class="text-xl font-semibold text-primary flex items-center gap-2">
+      <i class="fas fa-tshirt"></i> BastraVerse
+    </h1>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pb-12 da">
+    <!-- Desktop Nav -->
+    <nav>
+      <ul class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300">
+        <li><a href="#" class="hover:text-primary">Home</a></li>
+        <li><a href="#" class="hover:text-primary">About</a></li>
+        <li><a href="product.html" class="hover:text-primary">Products</a></li>
+        <li><a href="#" class="hover:text-primary">Services</a></li>
+        <li><a href="#" class="hover:text-primary">Blogs</a></li>
+        <li><a href="#" class="hover:text-primary">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-4 text-gray-700 dark:text-gray-300 text-xl">
+      <i class="fas fa-shopping-cart cursor-pointer hover:text-primary"></i>
+      <i class="fas fa-user cursor-pointer hover:text-primary"></i>
+
+      <!-- Dark_mode -->
+      <button
+        id="theme-toggle"
+        aria-label="Toggle Dark Mode"
+        class="hover:text-primary transition"
+      >
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </button>
+
+      <i class="fas fa-bars cursor-pointer md:hidden hover:text-primary"></i>
+    </div>
+  </div>
+</header>
+
+
+   <main class="container mx-auto px-4 pb-12">
       <!-- PAGE-TITLE -->
       <h2
         class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12 uppercase tracking-wide text-gray-900 dark:text-white"
@@ -175,7 +184,7 @@
                 class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
               >
                 <img
-                  src="/BastraVerse-Ecommerce-Clothing-Project/images/t-shirt.jpg"
+                  src="images/t-shirt.jpg"
                   alt="Cotton T-Shirt"
                   class="w-full h-full object-cover group-hover:opacity-75 transition"
                 />
@@ -206,7 +215,7 @@
                 class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
               >
                 <img
-                  src="/BastraVerse-Ecommerce-Clothing-Project/images/oversize.jpg"
+                  src="images/oversize.jpg"
                   alt="Oversized T-Shirt"
                   class="w-full h-full object-cover group-hover:opacity-75 transition"
                 />
@@ -237,7 +246,7 @@
                 class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
               >
                 <img
-                  src="/BastraVerse-Ecommerce-Clothing-Project/images/zipper-t-shirt.jpg"
+                  src="images/zipper-t-shirt.jpg"
                   alt="Cotton Shirt"
                   class="w-full h-full object-cover group-hover:opacity-75 transition"
                 />
@@ -268,7 +277,7 @@
                 class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
               >
                 <img
-                  src="/BastraVerse-Ecommerce-Clothing-Project/images/cargo.jpg"
+                  src="images/cargo.jpg"
                   alt="Cargo Pants"
                   class="w-full h-full object-cover group-hover:opacity-75 transition"
                 />
@@ -299,7 +308,7 @@
                 class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
               >
                 <img
-                  src="/BastraVerse-Ecommerce-Clothing-Project/images/denim-jecket.jpg"
+                  src="images/denim-jecket.jpg"
                   alt="Denim Jacket"
                   class="w-full h-full object-cover group-hover:opacity-75 transition"
                 />
@@ -330,7 +339,7 @@
                 class="w-full h-60 sm:h-72 md:h-80 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 group-hover:scale-105"
               >
                 <img
-                  src="/BastraVerse-Ecommerce-Clothing-Project/images/sneaker.jpg"
+                  src="images/sneaker.jpg"
                   alt="Sneakers"
                   class="w-full h-full object-cover group-hover:opacity-75 transition"
                 />
@@ -355,7 +364,7 @@
         </li>
       </ul>
 
-      <!-- PAGINATION -->
+      
       <nav class="flex justify-center mt-16">
         <div
           class="flex items-center space-x-2 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg"
@@ -385,7 +394,7 @@
           <a
             href="#"
             class="px-4 py-2 text-sm font-medium text-gray-500 dark:text-gray-300 hover:text-primary"
-            >›</a
+            ></a
           >
         </div>
       </nav>
